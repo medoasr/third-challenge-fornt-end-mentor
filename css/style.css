@@ -1,0 +1,115 @@
+/* font-family: 'Big Shoulders Display', cursive;400 */
+/* font-family: 'Lexend Deca', sans-serif;700 */
+/*global variables*/
+:root {
+  /*fonts*/
+  --font1: "Lexend Deca", sans-serif;
+  --font2: "Big Shoulders Display", cursive;
+  /* colors */
+  --Bright-orange: hsl(31, 77%, 52%);
+  --Dark-cyan: hsl(184, 100%, 22%);
+  --Very-dark-cyan: hsl(179, 100%, 13%);
+  --Transparent-white/*(paragraphs)*/: hsla(0, 0%, 100%, 0.75);
+  --Very-light-gray/*(background, headings, buttons)*/: hsl(0, 0%, 95%);
+}
+/* global styles */
+* {
+  box-sizing: border-box;
+}
+h2 {
+  color: hsl(0, 0%, 95%);
+  text-transform: uppercase;
+  font-family: var(--font2);
+  font-size: 40px;
+  letter-spacing: 1.5px;
+}
+p {
+  color: hsla(0, 0%, 100%, 0.75);
+  font-size: 15px;
+  font-family: var(--font1);
+  line-height: 1.6;
+}
+button {
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  margin: 30px 0;
+  background-color: transparent;
+  border: none;
+  border: 2px solid var(--Very-light-gray);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  padding: 10px 30px;
+  cursor: pointer;
+  background-color: var(--Very-light-gray);
+  text-transform: capitalize;
+  font-family: var(--font1);
+}
+/* style  */
+main {
+  background-color: var(--Very-light-gray);
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-content: center;
+  justify-content: center;
+  padding: 0 260px;
+}
+main section {
+  margin: 20px auto;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 40px 30px 95px 30px;
+}
+
+main section:nth-child(1) {
+  background-color: var(--Bright-orange);
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+}
+main section:nth-child(2) {
+  background-color: var(--Dark-cyan);
+}
+main section:nth-child(3) {
+  background-color: var(--Very-dark-cyan);
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+}
+main section:nth-child(1) button {
+  color: var(--Bright-orange);
+}
+main section:nth-child(2) button {
+  color: var(--Dark-cyan);
+}
+main section:nth-child(3) button {
+  color: var(--Very-dark-cyan);
+}
+main section button:hover {
+  background-color: transparent;
+  color: white;
+}
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: unset;
+    padding: 50px 15px;
+    height: unset;
+    min-height: 100vh;
+  }
+  main section:nth-child(1) {
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    border-bottom-left-radius: 0px;
+  }
+  main section:nth-child(3) {
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+    border-top-right-radius: 0px;
+  }
+}
